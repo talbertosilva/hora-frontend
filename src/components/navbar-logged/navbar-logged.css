@@ -173,7 +173,7 @@
     cursor: default;
 }
 
-.icon-perfil .dropdown-perfil li {
+.icon-perfil .dropdown-perfil .link {
     cursor: pointer;
     overflow-y: hidden;
     padding: 10px 16px;
