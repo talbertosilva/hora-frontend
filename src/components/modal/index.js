@@ -1,7 +1,6 @@
 import axios from 'axios'
 import React from 'react'
 import { useDispatch } from 'react-redux'
-import { Link } from 'react-router-dom'
 import { turnModalOff } from '../../reducers/modalApagarAnuncio'
 
 import './modal.css'
@@ -11,7 +10,8 @@ export const Modal = ({anuncioID}) => {
 
     const handleApagar = () => {
         axios.delete('https://hora-site.herokuapp.com/api/apagaranuncio/' + anuncioID)
-        dispatch(turnModalOff)
+        dispatch(turnModalOff())
+        window.location.reload(false)
     }
 
     return (
@@ -20,7 +20,7 @@ export const Modal = ({anuncioID}) => {
                 <p>Têm a certeza que pretende apagar este anúncio?</p>
                 <div>
                     <button onClick={() => dispatch(turnModalOff())} className='cancelar-btn'>Cancelar</button>
-                    <Link to="/anuncios"><button onClick={handleApagar} id='apagar-btn'>Apagar anúncio</button></Link>
+                    <button onClick={handleApagar} id='apagar-btn'>Apagar anúncio</button>
                 </div>
             </div>
         </div>
