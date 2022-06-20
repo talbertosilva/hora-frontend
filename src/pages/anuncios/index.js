@@ -123,6 +123,11 @@ export const Anuncios = () => {
         }
     }, [])
 
+    useEffect(() => {
+      console.log(apagarModal)
+    }, [apagarModal])
+    
+
     return (
         <>
             {modalTop ? <ModalTop Mensagem={modalMensagem} /> : null}
