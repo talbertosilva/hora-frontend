@@ -123,14 +123,6 @@ export const Anuncios = () => {
         }
     }, [])
 
-    useEffect(() => {
-        setCategoria("Todas as categorias")
-        axios.get('https://hora-site.herokuapp.com/api/getanuncios').then(res => {
-            setAnuncios(res.data.reverse())
-        })
-    }, [apagarModal])
-    
-
     return (
         <>
             {modalTop ? <ModalTop Mensagem={modalMensagem} /> : null}
