@@ -16,12 +16,9 @@ export const Perfil = () => {
     const dispatch = useDispatch()
     const params = useParams()
 
-    const [user, setUser] = useState()
-
     useEffect(() => {
         axios.get('https://hora-site.herokuapp.com/api/finduser/' + params.UtilizadorID)
             .then(res => {
-                setUser(res.data)
                 dispatch(updateUser({
                     _id: res.data._id,
                     profissao: res.data.profissao,
@@ -61,18 +58,18 @@ export const Perfil = () => {
         <>
             {localStorage.getItem("token") != null ?
                 <>
-                    {user != null ?
+                    {utilizador != null ?
                         <div className='perfil-container'>
                             <NavbarLogged />
                             <PerfilHeader
-                                nome={user.nome}
-                                apelido={user.apelido}
-                                profissao={user.profissao}
-                                localidade={user.localidade}/>
+                                nome={utilizador.nome}
+                                apelido={utilizador.apelido}
+                                profissao={utilizador.profissao}
+                                localidade={utilizador.localidade}/>
                             <PerfilBody
                                 userID={params.UtilizadorID}
-                                sobre={user.sobre != null ? user.sobre : null}
-                                descricao={user.descricao != null ? user.descricao : null} />
+                                sobre={utilizador.sobre != null ? utilizador.sobre : null}
+                                descricao={utilizador.descricao != null ? utilizador.descricao : null} />
                         </div>
                         : null}
                 </>
