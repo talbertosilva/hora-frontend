@@ -4,7 +4,6 @@ import { Link, useNavigate, Navigate } from 'react-router-dom';
 import axios from 'axios'
 
 import './login.css'
-import jwtDecode from 'jwt-decode';
 
 export const Login = () => {
     const navigate = useNavigate()
@@ -19,7 +18,7 @@ export const Login = () => {
 
         const userData = JSON.stringify({ email, password })
 
-        if(email != '' && password != ''){
+        if(email !== '' && password !== ''){
             axios
             .post('https://hora-site.herokuapp.com/api/login', userData, { headers: { 'Content-Type': 'application/json' } })
             .then(async res => {
