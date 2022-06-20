@@ -127,7 +127,7 @@ export const NavbarLogged = () => {
                                     <p className='moedas'>Saldo</p>
                                     <p className='moedas'>{utilizadorMoedas} ho:ra's</p>
                                 </li>
-                                <Link className='link' to={"/servicos" + decoded.id}>Perfil</Link>
+                                <Link className='link' to={"/perfil/" + decoded.id}>Perfil</Link>
                                 <Link className='link' to="/servicos">Serviços</Link>
                                 <Link className='link' to="/mensagens">Mensagens</Link>
                                 <li className='sair-conta' onClick={() => handleLogout()}>Sair da conta</li>
