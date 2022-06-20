@@ -123,10 +123,13 @@ export const Anuncios = () => {
         }
     }, [])
 
-    const handlePerfil = (id) => {
-        window.location.reload(false);
-        window.location.href = "/perfil/" + id
-    }
+    useEffect(() => {
+        setCategoria("Todas as categorias")
+        axios.get('https://hora-site.herokuapp.com/api/getanuncios').then(res => {
+            setAnuncios(res.data.reverse())
+        })
+    }, [apagarModal])
+    
 
     return (
         <>
