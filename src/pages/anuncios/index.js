@@ -117,17 +117,18 @@ export const Anuncios = () => {
                 })
         } else {
             setCategoria("Todas as categorias")
-            axios.get('https://hora-site.herokuapp.com/api/getanuncios').then(res => {
-                setAnuncios(res.data.reverse())
-            })
+            getAnuncios()
         }
     }, [])
 
-    useEffect(() => {
-        axios.get('https://hora-site.herokuapp.com/api/getanuncios').then(res => {
+    const getAnuncios = async () => {
+        await axios.get('https://hora-site.herokuapp.com/api/getanuncios').then(res => {
             setAnuncios(res.data.reverse())
-            console.log("reset")
         })
+    }
+
+    useEffect(() => {
+        getAnuncios()
     }, [apagarModal])
     
 
