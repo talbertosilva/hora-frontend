@@ -11,7 +11,7 @@ export const Reviews = ({userID}) => {
     const [reviews, setReviews] = useState([])
 
     useEffect(() => {
-      axios.get("http://localhost:1337/api/getreviews/" + userID ).then(res => setReviews(res.data))
+      axios.get("https://hora-site.herokuapp.com/api/getreviews/" + userID ).then(res => setReviews(res.data))
     }, [])
     
 

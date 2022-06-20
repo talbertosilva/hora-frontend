@@ -32,7 +32,7 @@ export const NavbarLogged = () => {
     }
 
     useEffect(() => {
-        axios.get("http://localhost:1337/api/getnotificacao/" + decoded.id).then(res => {
+        axios.get("https://hora-site.herokuapp.com/api/getnotificacao/" + decoded.id).then(res => {
             setNotificacoes(res.data)
             if (res.data.length === 0) {
                 setNotificacoesEmpty(!notificacaoEmpty)
@@ -46,7 +46,7 @@ export const NavbarLogged = () => {
 
     useEffect(() => {
         setDecoded(jwt_decode(localStorage.getItem("token")))
-        axios.get('http://localhost:1337/api/finduser/' + jwt_decode(localStorage.getItem("token")).id)
+        axios.get('https://hora-site.herokuapp.com/api/finduser/' + jwt_decode(localStorage.getItem("token")).id)
             .then(res => {
                 setUtilizadorFoto(res.data.foto)
                 setUtilizadorMoedas(res.data.moedas)

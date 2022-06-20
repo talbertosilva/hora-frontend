@@ -27,7 +27,7 @@ export const ModalReview = () => {
     const [reviewExiste, setReviewExiste] = useState(false)
 
     useEffect(() => {
-        axios.get("http://localhost:1337/api/getanuncio/" + reviewID)
+        axios.get("https://hora-site.herokuapp.com/api/getanuncio/" + reviewID)
             .then(res => {
                 setAnuncioData(res.data)
                 res.data.reviews.some(function (review) {
@@ -36,14 +36,14 @@ export const ModalReview = () => {
                 if (res.data.criadorID !== jwtDecode(localStorage.getItem("token")).id) {
                     setUtilizadorID(res.data.criadorID)
                     setFoto(res.data.candidatoFinalFoto)
-                    axios.get("http://localhost:1337/api/finduser/" + res.data.candidatoFinalID)
+                    axios.get("https://hora-site.herokuapp.com/api/finduser/" + res.data.candidatoFinalID)
                         .then(response => {
                             setNomeUtilizador(response.data.nome + " " + response.data.apelido)
                         })
                 } else {
                     setUtilizadorID(res.data.candidatoFinalID)
                     setFoto(res.data.criadorFoto)
-                    axios.get("http://localhost:1337/api/finduser/" + res.data.criadorID)
+                    axios.get("https://hora-site.herokuapp.com/api/finduser/" + res.data.criadorID)
                         .then(response => {
                             setNomeUtilizador(response.data.nome + " " + response.data.apelido)
                         })
@@ -64,7 +64,7 @@ export const ModalReview = () => {
                 dispatch(turnModalTopOff())
             }, 2000)
             :
-            axios.post('http://localhost:1337/api/postreview', {
+            axios.post('https://hora-site.herokuapp.com/api/postreview', {
                 texto: textoReview,
                 estrelas: numEstrelas,
                 foto: foto,
@@ -73,7 +73,7 @@ export const ModalReview = () => {
                 UtilizadorID: utilizadorID,
                 anuncioID: anuncioData._id
             })
-        axios.put('http://localhost:1337/api/enviarreview', {
+        axios.put('https://hora-site.herokuapp.com/api/enviarreview', {
             anuncioID: anuncioData._id,
             utilizadorID: utilizadorAtualID
         }).then(() => {
