@@ -173,7 +173,20 @@
     cursor: default;
 }
 
+.icon-perfil .dropdown-perfil ul {
+    display: flex;
+    flex-direction: column;
+}
+
 .icon-perfil .dropdown-perfil .link {
+    cursor: pointer;
+    overflow-y: hidden;
+    padding: 10px 16px;
+    font-family: CocoSharp-Bold, serif;
+    font-size: 14px;
+}
+
+.icon-perfil .dropdown-perfil li {
     cursor: pointer;
     overflow-y: hidden;
     padding: 10px 16px;
