@@ -186,6 +186,10 @@
     font-size: 14px;
 }
 
+.icon-perfil .dropdown-perfil .link:hover {
+    background-color: rgba(139, 139, 139, 0.25);
+}
+
 .icon-perfil .dropdown-perfil li {
     cursor: pointer;
     overflow-y: hidden;
