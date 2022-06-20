@@ -29,6 +29,7 @@ export const Mensagens = () => {
         axios.get("https://hora-site.herokuapp.com/api/getmensagenspessoa/" + jwtDecode(localStorage.getItem("token")).id).then(res => {
             setConversas(res.data)
             setConversaSelecionada(res.data[0]._id)
+            setConversaInfo(res.data[0])
             setMensagens(res.data[0].mensagens)
         })
     }, [])

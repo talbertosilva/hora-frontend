@@ -128,32 +128,22 @@ export const Anuncios = () => {
         window.location.href = "/perfil/" + id
     }
 
-    const handleCandidatar = (id) => {
-        window.location.reload(false);
-        window.location.href = "/candidatar-anuncio/" + id
-    }
-
-    const handleCandidatos = (id) => {
-        window.location.reload(false);
-        window.location.href = "/info-anuncio/" + id
-    }
-
     return (
         <>
-            {modalTop ? <ModalTop Mensagem={modalMensagem}/> : null}
+            {modalTop ? <ModalTop Mensagem={modalMensagem} /> : null}
             <div className='anuncios-container'>
                 {localStorage.getItem("token") != null ? <NavbarLogged /> : <NavbarHome />}
                 <div className='anuncios-header'>
-                <div className='title-icon'>
-                    <p className='titulo-pagina'>Anúncios</p>
-                    <div className='icon'>
-                        <MdHelp onMouseEnter={() => setHelpVisible(true)} onMouseLeave={() => setHelpVisible(false)} size={24} fill="#8B8B8B" />
-                        {helpVisible ? <p>Aqui estão listados os anúncios em aberto. Estes podem ser filtrados por diversas categorias.</p> : null}
+                    <div className='title-icon'>
+                        <p className='titulo-pagina'>Anúncios</p>
+                        <div className='icon'>
+                            <MdHelp onMouseEnter={() => setHelpVisible(true)} onMouseLeave={() => setHelpVisible(false)} size={24} fill="#8B8B8B" />
+                            {helpVisible ? <p>Aqui estão listados os anúncios em aberto. Estes podem ser filtrados por diversas categorias.</p> : null}
+                        </div>
                     </div>
-                </div>
                     <div className='categoria-botão'>
                         <div className='dropdown'>
-                            <p onClick={handleDropdownSelecao} className='categoria-click'>{selecao} {dropdownSelecaoOpen ? <FaAngleUp size={16}/> : <FaAngleDown size={16}/>}</p>
+                            <p onClick={handleDropdownSelecao} className='categoria-click'>{selecao} {dropdownSelecaoOpen ? <FaAngleUp size={16} /> : <FaAngleDown size={16} />}</p>
                             <div className={dropdownSelecaoOpen ? 'dropdown-selecao-open' : 'dropdown-selecao-close'}>
                                 <ul>
                                     <li onClick={() => handleSelecao("Os meus anúncios")}>Os meus anúncios</li>
@@ -162,7 +152,7 @@ export const Anuncios = () => {
                             </div>
                         </div>
                         <div className='dropdown'>
-                            <p onClick={handleDropdown} className='categoria-click'>{categoria} {dropdownOpen ? <FaAngleUp size={16}/> : <FaAngleDown size={16}/>}</p>
+                            <p onClick={handleDropdown} className='categoria-click'>{categoria} {dropdownOpen ? <FaAngleUp size={16} /> : <FaAngleDown size={16} />}</p>
                             <div className={dropdownOpen ? 'dropdown-menu-open' : 'dropdown-menu-close'}>
                                 <ul>
                                     <li onClick={() => handleCategoria("Todas as categorias")}>Todas as categorias</li>
@@ -205,9 +195,17 @@ export const Anuncios = () => {
                             <p className='duracao'>{anuncio.duracao} dias</p>
                             <p className='budget'>{anuncio.budget} ho:ra</p>
                             <div className='btn'>
-                                <button onClick={decoded.id != anuncio.criadorID ? () => handleCandidatar(anuncio._id) : () => handleCandidatos(anuncio._id)} className='enviar-btn'>{decoded.id != anuncio.criadorID ? 'Enviar proposta' : 'Ver candidatos'}</button>
+                                {decoded.id !== anuncio.criadorID ?
+                                    <Link to={"/candidatar-anuncio/" + anuncio._id}>
+                                        <button className='enviar-btn'>{decoded.id != anuncio.criadorID ? 'Enviar proposta' : 'Ver candidatos'}</button>
+                                    </Link>
+                                    :
+                                    <Link to={"/info-anuncio/" + anuncio._id}>
+                                        <button className='enviar-btn'>{decoded.id != anuncio.criadorID ? 'Enviar proposta' : 'Ver candidatos'}</button>
+                                    </Link>
+                                }
                                 {decoded.id == anuncio.criadorID ? <button onClick={() => dispatch(turnModalOn())} className='apagar-anuncio-btn'>Apagar anúncio</button> : null}
-                                {apagarModal ? <Modal anuncioID={anuncio._id}/>: null}
+                                {apagarModal ? <Modal anuncioID={anuncio._id} /> : null}
                             </div>
                         </div>
                     )}
