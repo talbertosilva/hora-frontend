@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { Navigate, useNavigate, useParams } from 'react-router-dom'
 import { logout, updateUser } from '../../reducers/loggedUser';
@@ -13,13 +13,15 @@ import { PerfilBody } from '../../components/perfil-body';
 export const Perfil = () => {
     const utilizador = useSelector((state) => state.logUser.user)
     const edit = useSelector((state) => state.editProfile.editing)
-    const navigate = useNavigate()
     const dispatch = useDispatch()
     const params = useParams()
 
+    const [user, setUser] = useState()
+
     useEffect(() => {
         axios.get('https://hora-site.herokuapp.com/api/finduser/' + params.UtilizadorID)
-            .then(res => { 
+            .then(res => {
+                setUser(res.data)
                 dispatch(updateUser({
                     _id: res.data._id,
                     profissao: res.data.profissao,
@@ -59,19 +61,18 @@ export const Perfil = () => {
         <>
             {localStorage.getItem("token") != null ?
                 <>
-                    {utilizador != null ?
+                    {user != null ?
                         <div className='perfil-container'>
                             <NavbarLogged />
                             <PerfilHeader
-                                nome={utilizador.nome}
-                                apelido={utilizador.apelido}
-                                profissao={utilizador.profissao}
-                                localidade={utilizador.localidade}
-                                estrelas="4.6" />
+                                nome={user.nome}
+                                apelido={user.apelido}
+                                profissao={user.profissao}
+                                localidade={user.localidade}/>
                             <PerfilBody
                                 userID={params.UtilizadorID}
-                                sobre={utilizador.sobre != null ? utilizador.sobre : null}
-                                descricao={utilizador.descricao != null ? utilizador.descricao : null} />
+                                sobre={user.sobre != null ? user.sobre : null}
+                                descricao={user.descricao != null ? user.descricao : null} />
                         </div>
                         : null}
                 </>
