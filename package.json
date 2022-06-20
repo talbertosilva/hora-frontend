@@ -1,7 +1,7 @@
 {
   "name": "frontend",
   "version": "0.1.0",
-  "proxy": "https://helpful-lokum-1a4cfd.netlify.app",
+  "proxy": "https://helpful-lokum-1a4cfd.netlify.app/",
   "private": true,
   "dependencies": {
     "@reduxjs/toolkit": "^1.8.2",
