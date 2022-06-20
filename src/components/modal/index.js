@@ -9,7 +9,7 @@ export const Modal = ({anuncioID}) => {
     const dispatch = useDispatch()
 
     const handleApagar = () => {
-        axios.delete('http://localhost:1337/api/apagaranuncio/' + anuncioID)
+        axios.delete('https://hora-site.herokuapp.com/api/apagaranuncio/' + anuncioID)
         dispatch(turnModalOff)
         window.location.reload(false)
     }

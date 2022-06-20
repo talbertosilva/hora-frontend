@@ -189,7 +189,7 @@ export const Anuncios = () => {
                         <div className='table-body' key={anuncio._id}>
                             <p className='data'>{moment(anuncio.data).utc().format('DD/MM/YYYY')}</p>
                             <div className='imagem'>
-                                <img onClick={() => handlePerfil(anuncio.criadorID)} alt='table-img' src={anuncio.criadorFoto}></img>
+                                <Link to={"/perfil/" + anuncio.criadorID}><img alt='table-img' src={anuncio.criadorFoto}></img></Link>
                             </div>
                             <p className='texto'>{anuncio.pedido}</p>
                             <p className='duracao'>{anuncio.duracao} dias</p>
