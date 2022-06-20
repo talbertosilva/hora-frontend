@@ -1,0 +1,69 @@
+.como-funciona-container {
+    display: flex;
+    flex-direction: column;
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-bottom: 100px;
+    background-color: #F8F8F8;
+    flex-wrap: wrap;
+}
+
+.como-funciona-container h1 {
+    font-family: CocoSharp-Bold, serif;
+    align-self: center;
+    font-size: 40px;
+    margin-bottom: 80px;
+    margin-top: 50px;
+    color: #1c1c1c;
+}
+
+.como-funciona-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.como-funciona-card {
+    display: flex;
+    width: 300px;
+    flex-direction: column;
+    margin-bottom: 48px;
+}
+
+.como-funciona-card .img {
+    width: 250px;
+    height: 250px;
+    border-radius: 100%;
+    align-self: center;
+}
+
+.img-1 {
+    background: url('../../../public/crie.jpg');
+    background-size: cover;
+}
+
+.img-2 {
+    background: url('../../../public/pague.jpg');
+    background-position: 40%;
+    background-size: cover;
+}
+
+.img-3 {
+    background: url('../../../public/ajude.jpg');
+    background-position: 60%;
+    background-size: cover;
+}
+
+.como-funciona-card .title {
+    font-family: CocoSharp-Bold, serif;
+    font-size: 20px;
+    margin-top: 32px;
+    color: #1c1c1c;
+}
+
+.como-funciona-card .description {
+    font-family: CocoSharp-Regular, serif;
+    font-size: 16px;
+    margin-top: 16px;
+    color: #8B8B8B;
+}

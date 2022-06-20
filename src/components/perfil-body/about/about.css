@@ -1,0 +1,63 @@
+.sobre-container {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    gap: 32px;
+    width: 38.2%;
+    margin-right: 16px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: rgba(139, 139, 139, 0.25);
+    padding: 32px 48px;
+}
+
+.sobre-container .sobre-title {
+    font-family: CocoSharp-Bold, serif;
+    font-size: 20px;
+    color: #1C1C1C;
+    margin-bottom: 16px;
+}
+
+.sobre-container .sobre-body {
+    font-family: CocoSharp-Regular, serif;
+    color: #8b8b8b;
+    width: 100%;
+    font-size: 14px;
+    border: none;
+    background-color: white;
+}
+
+.sobre-container .sobre-body-editing {
+    font-family: CocoSharp-Regular, serif;
+    color: #8b8b8b;
+    width: 100%;
+    font-size: 14px;
+    border-width: 1px;
+    border-color: rgba(139, 139, 139, 0.5);
+    padding-left: 4px;
+    padding-right: 4px;
+    outline-color: #80c469;
+    background-color: white;
+    border-radius: 4px;
+}
+
+.sobre-container textarea {
+    min-height: 100px;
+    max-height: 150px;
+    resize: none;
+}
+
+.sobre-container .sobre-body:focus {
+    margin: 1px;
+    width: 100%;
+    word-wrap: break-word;
+    outline-style: solid;
+    outline-width: 1px;
+    outline-color: #8B8B8B;
+}
+
+.sobre-container .sobre-body-data {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #8b8b8b;
+    font-size: 14px;
+}

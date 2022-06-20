@@ -1,0 +1,167 @@
+.container-full-header {
+    width: 100%;
+}
+
+.container-inside-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    padding: 32px 48px;
+    background-color: white;
+    border-style: solid;
+    border-width: 1px;
+    border-color: rgba(139, 139, 139, 0.25);
+}
+
+.container-user-data {
+    display: flex;
+    align-items: center;
+    gap: 48px;
+}
+
+.header-profile-image img {
+    width: 150px;
+    border-radius: 100%;
+}
+
+.nome-estrelas {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+}
+
+.nome-estrelas .nome {
+    font-family: CocoSharp-Bold, serif;
+    color: #1C1C1C;
+    font-size: 24px;
+}
+
+.nome-estrelas .estrelas {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 700;
+    color: #FAAD17;
+    background-color: #FFE9B1;
+    border-radius: 20px;
+    padding: 4px 16px;
+}
+
+.header-user-info .profissao {
+    font-family: CocoSharp-Bold, serif;
+    margin-top: 4px;
+    width: 225px;
+    border: none;
+    background-color: white;
+    font-size: 16px;
+    color: #8B8B8B;
+}
+
+.header-user-info .filebase {
+    margin-top: 4px;
+}
+
+.header-user-info .profissao-editing {
+    font-family: CocoSharp-Bold, serif;
+    margin-top: 4px;
+    width: 225px;
+    border-width: 1px;
+    border-color: rgba(139, 139, 139, 0.5);
+    padding-right: 4px;
+    padding-left: 4px;
+    background-color: white;
+    border-radius: 4px;
+    outline-color: #80c469;
+    font-size: 16px;
+    color: #8B8B8B;
+}
+
+.header-user-info .localidade {
+    display: flex;
+    width: 225px;
+    align-items: stretch;
+    font-family: CocoSharp-Regular, serif;
+    margin-top: 2px;
+    font-size: 15px;
+    color: #8B8B8B;
+    background: none;
+    border: none;
+}
+
+.localidade-container .localidade-editing {
+    display: flex;
+    width: 225px;
+    align-items: stretch;
+    font-family: CocoSharp-Regular, serif;
+    margin-top: 2px;
+    font-size: 15px;
+    color: #8B8B8B;
+    background: none;
+    border-radius: 4px;
+    border-width: 1px;
+    border-color: rgba(139, 139, 139, 0.5);
+    outline-color: #80c469;
+    padding-right: 4px;
+    padding-left: 4px;
+}
+
+.header-user-info .profissao:focus {
+    margin-left: 1px;
+    outline-style: solid;
+    outline-width: 1px;
+    outline-color: #8B8B8B;
+}
+
+.header-user-info .localidade:focus {
+    margin: 1px;
+    outline-style: solid;
+    outline-width: 1px;
+    outline-color: #8B8B8B;
+}
+
+.header-buttons {
+    display: flex;
+    gap: 32px;
+}
+
+.header-buttons .simple-button {
+    cursor: pointer;
+    text-decoration: none;
+    color: #1C1C1C;
+    font-size: 14px;
+    font-family: CocoSharp-Regular, serif;
+    background: none;
+    border: none;
+}
+
+.header-buttons .green-button {
+    cursor: pointer;
+    font-family: CocoSharp-Bold, serif;
+    color: white;
+    background-color: #8ED975;
+    outline: 0;
+    border: 0;
+    border-radius: 4px;
+    padding: 8px 32px;
+    font-size: 14px;
+}
+
+.header-buttons .green-button:hover {
+    background-color: #80c469;
+}
+
+.header-buttons .simple-button:hover {
+    font-family: CocoSharp-Bold, serif;
+}
+
+.header-user-info .localidade-container {
+    display: flex;
+    align-items: center;
+}
+
+.localidade-container svg {
+    color: #8B8B8B;
+    margin-right: 4px;
+}

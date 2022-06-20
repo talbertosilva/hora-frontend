@@ -1,0 +1,117 @@
+.card {
+    width: 270px;
+    height: 390px;
+    display: flex;
+    flex: none;
+    align-items: flex-end;
+    padding: 32px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.card-1 {
+    background: linear-gradient(360deg, rgba(0,0,0,0.8) 12%, rgba(255,255,255,0) 60%), url("../../../public/jardineiro.jpg");
+    background-size: cover;
+    background-position: 50%;
+}
+
+.card-2 {
+    background: linear-gradient(360deg, rgba(0,0,0,0.8) 12%, rgba(255,255,255,0) 60%), url("../../../public/carpenter.jpg");
+    background-size: cover;
+    background-position: 50%;
+}
+
+.card-3 {
+    background: linear-gradient(360deg, rgba(0,0,0,0.8) 12%, rgba(255,255,255,0) 60%), url("../../../public/design.jpg");
+    background-size: cover;
+    background-position: left;
+}
+
+.card-4 {
+    background: linear-gradient(360deg, rgba(0,0,0,0.8) 12%, rgba(255,255,255,0) 60%), url("../../../public/explicacoes.jpg");
+    background-size: cover;
+    background-position: 50%;
+}
+
+.card-5 {
+    background: linear-gradient(360deg, rgba(0,0,0,0.8) 12%, rgba(255,255,255,0) 60%), url("../../../public/arquitetura.jpg");
+    background-size: cover;
+    background-position: 50%;
+}
+
+.card-6 {
+    background: linear-gradient(360deg, rgba(0,0,0,0.8) 12%, rgba(255,255,255,0) 60%), url("../../../public/contabilista.jpg");
+    background-size: cover;
+    background-position: 50%;
+}
+
+.card-7 {
+    background: linear-gradient(360deg, rgba(0,0,0,0.8) 12%, rgba(255,255,255,0) 60%), url("../../../public/ama.jpg");
+    background-size: cover;
+    background-position: 50%;
+}
+
+.card-8 {
+    background: linear-gradient(360deg, rgba(0,0,0,0.8) 12%, rgba(255,255,255,0) 60%), url("../../../public/eletricista.jpg");
+    background-size: cover;
+    background-position: 50%;
+}
+
+.card-9 {
+    background-color: #8ED975;
+}
+
+.card p {
+    font-family: CocoSharp-Bold, serif;
+    font-size: 20px;
+    letter-spacing: 1px;
+    color: white;
+}
+
+.cards {
+    overflow-x: scroll;
+    display: flex;
+    gap: 32px;
+}
+
+.cards::-webkit-scrollbar{
+    display: none;
+}
+
+.serviços-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding-left: 10%;
+    padding-right: 10%;
+    background-color: #F8F8F8;
+    padding-bottom: 100px;
+}
+
+.serviços-container h1 {
+    font-family: CocoSharp-Bold, serif;
+    align-self: center;
+    margin-bottom: 80px;
+    color: #1c1c1c;
+    margin-top: 100px;
+    font-size: 40px;
+}
+
+.cards-buttons {
+    display: flex;
+}
+
+.cards-buttons button {
+    flex: none;
+    background: none;
+    outline: none;
+    border: none;
+    cursor: pointer;
+}
+
+.button-left {
+    margin-right: 32px;
+}
+.button-right {
+    margin-left: 32px;
+}

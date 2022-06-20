@@ -1,0 +1,190 @@
+.container-navbar-logged {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    height: 60px;
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-top: 9px;
+    padding-bottom: 9px;
+    overflow-y: hidden;
+    align-items: center;
+    background-color: #F8F8F8;
+}
+.container-navbar-logged img {
+    width: 80px;
+    height: 25px;
+}
+
+.navbar-logged-buttons {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+}
+
+.simple-btn {
+    cursor: pointer;
+    width: fit-content;
+    text-decoration: none;
+    color: #1C1C1C;
+    font-size: 14px;
+    font-family: CocoSharp-Regular, serif;
+}
+
+.simple-btn:hover {
+    font-family: CocoSharp-Bold, serif;
+}
+
+.link {
+    text-decoration: none;
+    color: #1C1C1C;
+}
+
+.notificacoes {
+    display: flex;
+    width: fit-content;
+    justify-content: right;
+    z-index: 2;
+}
+
+.notificacoes .dropdown-menu-open {
+    height: fit-content;
+    display: block;
+    top: 48px;
+    max-height: 150px;
+    position: absolute;
+    background-color: white;
+    border-radius: 4px;
+    width: 200px;
+    border-style: solid;
+    border-color: rgba(139, 139, 139, 0.75);
+    border-width: 1px;
+    box-shadow: 6px 7px 17px -8px rgba(0,0,0,0.19);
+}
+
+.navbar-logged-buttons .simple-profile-image {
+    cursor: pointer;
+    width: 32px;
+    height: 32px;
+    border-radius: 100%;
+}
+
+.notificacoes .dropdown-menu-close {
+    display: none;
+    height: 0px;
+}
+
+.blueprint-notificacao {
+    cursor: pointer;
+    background-color: white;
+    padding: 10px 16px;
+}
+
+.blueprint-notificacao:hover {
+    background-color: #f1f1f1;
+}
+
+.blueprint-notificacao .titulo-notificacao {
+    font-family: CocoSharp-Bold, serif;
+    color: #1C1C1C;
+    font-size: 14px;
+}
+
+.blueprint-notificacao .body-notificacao {
+    font-family: CocoSharp-Regular, serif;
+    color: #8B8B8B;
+    font-size: 13px;
+    margin-top: 2px;
+    margin-bottom: 12px;
+}
+
+/* width */
+.notificacoes .dropdown-menu-open::-webkit-scrollbar {
+    width: 8px;
+}
+  
+/* Track */
+.notificacoes .dropdown-menu-open::-webkit-scrollbar-track {
+    background: #e6e6e6;
+    border-radius: 4px;
+}
+  
+/* Handle */
+.notificacoes .dropdown-menu-open::-webkit-scrollbar-thumb {
+    background: #8ED975;
+    border-radius: 4px
+}
+  
+/* Handle on hover */
+.notificacoes .dropdown-menu-open::-webkit-scrollbar-thumb:hover {
+    background: #68a055;
+}
+
+.ver-mais {
+    background-color: #8ED975;
+    cursor: pointer;
+}
+
+.ver-mais:hover {
+    background-color: #68a055;
+    cursor: pointer;
+}
+
+.ver-mais p {
+    font-family: CocoSharp-Bold, serif;
+    color: white;
+    font-size: 14px;
+    padding: 10px 16px;
+}
+
+.icon-perfil {
+    display: flex;
+    justify-content: right;
+}
+
+.icon-perfil .dropdown-perfil {
+    top: 48px;
+    height: fit-content;
+    z-index: 1;
+    position: absolute;
+    background-color: white;
+    border-radius: 4px;
+    width: fit-content;
+    min-width: 175px;
+    border-style: solid;
+    border-color: rgba(139, 139, 139, 0.75);
+    border-width: 1px;
+    box-shadow: 6px 7px 17px -8px rgba(0,0,0,0.19);
+}
+
+.icon-perfil .dropdown-perfil .moedas {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 700;
+    color: white;
+}
+
+.icon-perfil .dropdown-perfil li:first-child {
+    background-color: #8ED975;
+    cursor: default;
+}
+
+.icon-perfil .dropdown-perfil li:first-child:hover {
+    background-color: #8ED975;
+    cursor: default;
+}
+
+.icon-perfil .dropdown-perfil li {
+    cursor: pointer;
+    overflow-y: hidden;
+    padding: 10px 16px;
+    font-family: CocoSharp-Bold, serif;
+    font-size: 14px;
+}
+
+.icon-perfil .dropdown-perfil li:hover {
+    background-color: rgba(139, 139, 139, 0.25);
+}
+
+.dropdown-perfil .sair-conta {
+    color: #ca4b4b;
+}

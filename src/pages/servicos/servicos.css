@@ -1,0 +1,308 @@
+.servicos-container {
+    background-color: #F8F8F8;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.servicos-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 16px;
+    
+    width: 80%;
+}
+
+.servicos-inside-container {
+    background-color: white;
+    width: 80%;
+    height: 400px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: rgba(139, 139, 139, 0.25);
+    margin-bottom: 25px;
+}
+
+.servicos-header .titulo-pagina {
+    font-family: CocoSharp-Bold, serif;
+    font-size: 32px;
+    color: #1c1c1c;
+}
+
+.title-icon {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    z-index: 3;
+}
+
+.review-btn {
+    margin-top: 6px;
+    width: 100%;
+    cursor: pointer;
+    font-family: CocoSharp-Bold, serif;
+    color: #8ED975;
+    background: none;
+    outline: 0;
+    border: 0;
+    border-radius: 4px;
+    padding: 8px 32px;
+    font-size: 14px;
+}
+
+.review-btn:hover {
+    text-decoration: underline;
+}
+
+.title-icon .icon p {
+    width: 300px;
+    background-color: white;
+    border-style: solid;
+    border-width: 1px;
+    border-color: rgba(139, 139, 139, 0.25);
+    padding: 12px 24px;
+    font-family: CocoSharp-Regular, serif;
+    font-size: 14px;
+    color: #1c1c1c;
+    position: absolute;
+}
+
+.servicos-header .categoria-botão {
+    display: flex;
+    align-items: center;
+}
+
+.servicos-header .categoria-botão .dropdown-menu-open {
+    height: 150px;
+    position: absolute;
+    background-color: white;
+    border-radius: 4px;
+    width: 200px;
+    border-style: solid;
+    border-color: rgba(139, 139, 139, 0.75);
+    border-width: 0px 1px 1px 1px;
+}
+
+.servicos-header .dropdown-selecao-open {
+    height: auto;
+    position: absolute;
+    background-color: white;
+    border-radius: 4px;
+    width: 200px;
+    border-style: solid;
+    border-color: rgba(139, 139, 139, 0.75);
+    border-width: 0px 1px 1px 1px;
+}
+
+.servicos-header .dropdown-selecao-open li {
+    padding: 8px 16px;
+    cursor: pointer;
+    color: #1c1c1c;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+}
+
+.servicos-header .dropdown-selecao-open li:hover {
+    background-color: rgba(139, 139, 139, 0.25);
+}
+
+/* width */
+.servicos-header .categoria-botão .dropdown-menu-open::-webkit-scrollbar {
+    width: 8px;
+}
+  
+/* Track */
+.servicos-header .categoria-botão .dropdown-menu-open::-webkit-scrollbar-track {
+    background: #e6e6e6;
+    border-radius: 4px;
+}
+  
+/* Handle */
+.servicos-header .categoria-botão .dropdown-menu-open::-webkit-scrollbar-thumb {
+    background: #8ED975;
+    border-radius: 4px
+}
+  
+/* Handle on hover */
+.servicos-header .categoria-botão .dropdown-menu-open::-webkit-scrollbar-thumb:hover {
+    background: #68a055;
+}
+
+.servicos-header .categoria-botão .dropdown-menu-open li {
+    padding: 8px 16px;
+    cursor: pointer;
+    color: #1c1c1c;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+}
+
+.servicos-header .categoria-botão .dropdown-menu-open li:hover {
+    background-color: rgba(139, 139, 139, 0.25);
+}
+
+.servicos-header .categoria-botão .dropdown-menu-close {
+    height: 0px;
+}
+
+.dropdown-selecao-close {
+    height: 0px;
+}
+
+.servicos-header .categoria-click {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: Arial, Helvetica, sans-serif;
+    width: 200px;
+    outline-color: #8ED975;
+    border-width: 1px;
+    font-size: 14px;
+    color: #8B8B8B;
+    border-style: solid;
+    position: relative;
+    border-color: rgba(139, 139, 139, 0.75);
+}
+
+.table-header .candidato {
+    width: 10%;
+    padding-right: 24px;
+}
+.table-header .estado {
+    width: 10%;
+    padding-right: 24px;
+}
+
+
+.servicos-inside-container .table-body {
+    display: flex;
+    align-items: flex-start;
+    width: 100%;
+    padding: 24px 48px;
+}
+
+/* width */
+.servicos-inside-container::-webkit-scrollbar {
+    width: 8px;
+}
+  
+/* Track */
+.servicos-inside-container::-webkit-scrollbar-track {
+    background: #e6e6e6;
+    border-radius: 4px;
+}
+  
+/* Handle */
+.servicos-inside-container::-webkit-scrollbar-thumb {
+    background: #8ED975;
+    border-radius: 4px
+}
+  
+/* Handle on hover */
+.servicos-inside-container::-webkit-scrollbar-thumb:hover {
+    background: #68a055;
+}
+
+.servicos-inside-container .table-body .data {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    width: 10%;
+    color: #1c1c1c;
+    padding-right: 24px;
+}
+
+.servicos-inside-container .table-body .texto {
+    font-family: CocoSharp-Regular, serif;
+    font-size: 14px;
+    color: #1c1c1c;
+    width: 40%;
+    padding-right: 24px;
+}
+
+.servicos-inside-container .table-body img {
+    width: 60px;
+    height: 60px;
+    border-radius: 100%;
+    cursor: pointer;
+}
+
+.servicos-inside-container .table-body .imagem {
+    width: 10%;
+    padding-right: 24px;
+}
+
+.servicos-inside-container .table-body .duracao {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    width: 10%;
+    color: #1c1c1c;
+    padding-right: 24px;
+}
+
+.servicos-inside-container .table-body .estado {
+    width: 10%;
+}
+
+.servicos-inside-container .table-body .estado #texto-decorrer {
+    font-family: CocoSharp-Bold, serif;
+    font-size: 14px;
+    color: #8ED975;
+}
+
+.servicos-inside-container .table-body .estado #texto-terminado {
+    font-family: CocoSharp-Bold, serif;
+    font-size: 14px;
+    color: #ca4b4b;
+}
+
+.servicos-inside-container .table-body .estado #texto-pendente {
+    font-family: CocoSharp-Bold, serif;
+    font-size: 14px;
+    color: #FAAD17;
+}
+
+.table-body .estado #circulo-verde {
+    width: 16px;
+    height: 16px;
+    border-radius: 100%;
+    background-color: #8ED975;
+}
+
+.table-body .estado #circulo-vermelho {
+    width: 16px;
+    height: 16px;
+    border-radius: 100%;
+    background-color: #ca4b4b;
+}
+
+.table-body .estado #circulo-amarelo {
+    width: 16px;
+    height: 16px;
+    border-radius: 100%;
+    background-color: #FAAD17;
+}
+
+.servicos-inside-container .table-body .budget {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    width: 10%;
+    color: #1c1c1c;
+    padding-right: 24px;
+}
+
+.servicos-inside-container .table-body .categoria {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    width: 10%;
+    color: #1c1c1c;
+    padding-right: 24px;
+}
+
+.servicos-inside-container .table-body .btn {
+    width: 20%;
+    margin-left: auto;
+}

@@ -1,0 +1,14 @@
+.container-navbar-simple {
+    display: flex;
+    width: 100%;
+    height: 60px;
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-top: 9px;
+    padding-bottom: 9px;
+    align-items: center;
+}
+.container-navbar-simple img {
+    width: 80px;
+    height: 25px;
+}

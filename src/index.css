@@ -1,13 +1,32 @@
-body {
+* {
+  box-sizing: border-box;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+@font-face {
+  font-family: 'CocoSharp-Bold';
+  src: local('CocoSharp-Bold'), url('./fonts/Coco-Sharp-Bold-trial.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'CocoSharp-Extrabold';
+  src: local('CocoSharp-Extrabold'), url('./fonts/Coco-Sharp-Extrabold-trial.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'CocoSharp-Extralight';
+  src: local('CocoSharp-Extralight'), url('./fonts/Coco-Sharp-Extralight-trial.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'CocoSharp-Heavy';
+  src: local('CocoSharp-Heavy'), url('./fonts/Coco-Sharp-Heavy-trial.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'CocoSharp-Light';
+  src: local('CocoSharp-Light'), url('./fonts/Coco-Sharp-Light-trial.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'CocoSharp-Regular';
+  src: local('CocoSharp-Regular'), url('./fonts/Coco-Sharp-Regular-trial.ttf') format('truetype');
 }

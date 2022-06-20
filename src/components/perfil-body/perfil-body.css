@@ -1,0 +1,8 @@
+.perfil-body-container {
+    display: flex;
+    flex-direction: row;
+    padding-left: 10%;
+    padding-right: 10%;
+    margin-top: 16px;
+    margin-bottom: 100px;
+}

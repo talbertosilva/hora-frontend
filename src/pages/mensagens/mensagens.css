@@ -1,0 +1,42 @@
+.chat-container {
+    background-color: #F8F8F8;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.chat-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 16px;
+    font-family: CocoSharp-Bold, serif;
+    font-size: 32px;
+    color: #1c1c1c;
+    width: 80%;
+}
+
+.chat-body {
+    display: flex;
+    flex-direction: row;
+    width: 80%;
+}
+
+.chat-body .conversas-section {
+    height: fit-content;
+}
+
+.user {
+    background-color: white;
+    padding-top: 16px;
+    padding-bottom: 16px;
+}
+
+.selecionado {
+    background-color: rgba(142, 217, 117, 0.4);
+}
+
+.user:hover {
+    background-color: #F8F8F8;
+}

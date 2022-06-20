@@ -1,0 +1,55 @@
+.modal-fullscreen {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.25);
+}
+
+.modal-container{
+    background-color: white;
+    padding: 36px 56px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 2px 5px 25px -14px rgba(0,0,0,0.5);
+}
+
+.modal-container p {
+    font-family: CocoSharp-Bold, serif;
+    font-size: 16px;
+    color: #1c1c1c;
+    margin-bottom: 24px;
+}
+
+.modal-container .cancelar-btn {
+    cursor: pointer;
+    font-family: CocoSharp-Bold, serif;
+    background: none;
+    color: #8B8B8B;
+    margin-right: 16px;
+    outline: none;
+    border: none;
+}
+
+.modal-container #apagar-btn {
+    cursor: pointer;
+    font-family: CocoSharp-Bold, serif;
+    color: white;
+    background-color: #ca4b4b;
+    outline: 0;
+    border: 0;
+    border-radius: 4px;
+    padding: 8px 32px;
+    font-size: 14px;
+    margin-top: 8px;
+}
+
+.modal-container #apagar-btn:hover {
+    background-color: #963737;
+}

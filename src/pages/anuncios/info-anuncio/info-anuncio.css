@@ -1,0 +1,225 @@
+.info-anuncio-container {
+    background-color: #F8F8F8;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.info-anuncio-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 16px;
+    font-family: CocoSharp-Bold, serif;
+    font-size: 32px;
+    color: #1c1c1c;
+    width: 80%;
+}
+
+.info-anuncio-body {
+    display: flex;
+    flex-direction: row;
+    width: 80%;
+}
+
+.info-anuncio-body .anuncio-section-estado {
+    margin-bottom: 32px;
+}
+
+.info-anuncio-body .candidato-body {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 32px 48px;
+    background-color: white;
+}
+
+.info-anuncio-body .candidato-body:hover {
+    background-color: rgba(139, 139, 139, 0.1);
+}
+
+.info-anuncio-body .candidato-info-button {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: 16px;
+}
+
+.info-anuncio-body .candidato-info-button img {
+    width: 40px;
+    height: 40px;
+}
+
+.info-anuncio-body .candidato-info-button .info {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.info-anuncio-body .candidato-info-button .info .nome {
+    font-family: CocoSharp-Bold, serif;
+    font-size: 16px;
+    color: #1c1c1c;
+}
+
+.info-anuncio-body .candidato-info-button .info .profissao {
+    font-family: CocoSharp-Regular, serif;
+    font-size: 14px;
+    color: #8b8b8b;
+}
+
+.info-anuncio-body .aceitar-btn {
+    cursor: pointer;
+    display: none;
+    font-family: CocoSharp-Bold, serif;
+    color: white;
+    background-color: #8ED975;
+    outline: 0;
+    border: 0;
+    border-radius: 4px;
+    padding: 8px 32px;
+    font-size: 14px;
+}
+
+.info-anuncio-body .candidato-aceite {
+    font-family: CocoSharp-Bold, serif;
+    color: #8ED975;
+    background-color: transparent;
+    outline: 0;
+    border: 0;
+    border-radius: 4px;
+    padding: 8px 32px;
+    font-size: 14px;
+}
+
+.botões-candidatos {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.info-anuncio-body .candidato-body:hover .aceitar-btn {
+    display: flex;
+}
+
+.candidato-budget-mensagem {
+    display: flex;
+    gap: 32px;
+    width: 100%;
+}
+
+.candidato-budget-mensagem .budget {
+    width: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.candidato-budget-mensagem .mensagem {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+}
+
+.candidato-budget-mensagem .title {
+    font-family: CocoSharp-Bold, serif;
+    font-size: 14px;
+    color: #8b8b8b;
+    margin-bottom: 8px;
+}
+
+.candidato-budget-mensagem .body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    color: #1c1c1c;
+}
+
+.anuncio-section-estado .estado {
+    margin-left: 48px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #1c1c1c;
+    font-size: 14px;
+    margin-bottom: 12px;
+}
+
+.candidatos {
+    height: 600px;
+}
+
+.info-anuncio-body .anuncio-section {
+    min-height: 500px;
+    height: fit-content;
+}
+
+/* width */
+.candidatos::-webkit-scrollbar {
+    width: 8px;
+}
+  
+/* Track */
+.candidatos::-webkit-scrollbar-track {
+    background: #e6e6e6;
+    border-radius: 4px;
+}
+  
+/* Handle */
+.candidatos::-webkit-scrollbar-thumb {
+    background: #8ED975;
+    border-radius: 4px
+}
+  
+/* Handle on hover */
+.candidatos::-webkit-scrollbar-thumb:hover {
+    background: #68a055;
+}
+
+.nao-existem-candidatos {
+    font-family: CocoSharp-Regular, serif;
+    font-size: 14px;
+    color: #8b8b8b;
+}
+
+.anuncio-section-pedido .pedido {
+    margin-right: 48px;
+}
+
+.candidato-info-button .info img {
+    border-radius: 100%;
+}
+
+.candidato-info-button .aceitar-btn:hover {
+    background-color: #68a055;
+}
+
+.info-anuncio-body .candidatura-section {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    width: 61.2%;
+    height: auto;
+    border-style: solid;
+    border-width: 1px;
+    border-color: rgba(139, 139, 139, 0.25);
+    margin-top: 25px;
+    margin-bottom: 25px;
+    margin-left: 16px;
+}
+
+@media (max-width: 1000px) {
+    .info-anuncio-body {
+        display: flex;
+        flex-direction: column;
+        width: 80%;
+    }
+
+    .info-anuncio-body .anuncio-section {
+        width: 100%;
+        height: fit-content;
+    }    
+
+    .info-anuncio-body .candidatura-section {
+        width: 100%;
+        height: fit-content;
+        margin-left: 0;
+    }    
+}
