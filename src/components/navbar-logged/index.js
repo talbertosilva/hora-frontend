@@ -78,6 +78,14 @@ export const NavbarLogged = () => {
         }
     }
 
+    const handleServicos = () => {
+        window.location.href = "/servicos"
+    }
+
+    const handleMensagens = () => {
+        window.location.href = "/mensagens"
+    }
+
     return (
         <div className='container-navbar-logged'>
             <Link to='/'><img src='https://i.postimg.cc/VvtFYYR4/Logo-Hora.png' alt='Logo Hora' /></Link>
@@ -120,8 +128,8 @@ export const NavbarLogged = () => {
                                     <p className='moedas'>{utilizadorMoedas} ho:ra's</p>
                                 </li>
                                 <li onClick={() => handlePerfil(decoded.id)}>Perfil</li>
-                                <li><Link className='link' to="/servicos">Serviços</Link></li>
-                                <li><Link className='link' to="/mensagens">Mensagens</Link></li>
+                                <li onClick={handleServicos}>Serviços</li>
+                                <li onClick={handleMensagens}>Mensagens</li>
                                 <li className='sair-conta' onClick={() => handleLogout()}>Sair da conta</li>
                             </ul>
                         </div>
