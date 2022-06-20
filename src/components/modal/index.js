@@ -20,7 +20,7 @@ export const Modal = ({anuncioID}) => {
                 <p>Têm a certeza que pretende apagar este anúncio?</p>
                 <div>
                     <button onClick={() => dispatch(turnModalOff())} className='cancelar-btn'>Cancelar</button>
-                    <Link to="?"><button onClick={handleApagar} id='apagar-btn'>Apagar anúncio</button></Link>
+                    <Link to="."><button onClick={handleApagar} id='apagar-btn'>Apagar anúncio</button></Link>
                 </div>
             </div>
         </div>
