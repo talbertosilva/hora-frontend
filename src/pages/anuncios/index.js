@@ -124,7 +124,9 @@ export const Anuncios = () => {
     }, [])
 
     useEffect(() => {
-      console.log(apagarModal)
+        axios.get('https://hora-site.herokuapp.com/api/getanuncios').then(res => {
+            setAnuncios(res.data.reverse())
+        })
     }, [apagarModal])
     
 
