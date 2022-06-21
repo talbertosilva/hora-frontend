@@ -81,7 +81,7 @@ export const InfoServico = () => {
             .then(() => {
                 axios.get("https://hora-site.herokuapp.com/api/getanuncio/" + params.anuncioID)
                     .then(res => {
-                        if (res.data.terminar.length === 2) {
+                        if (res.data.terminar.length > 1) {
                             axios.put("https://hora-site.herokuapp.com/estadoanuncio", { anuncioID: params.anuncioID, estado: "Terminado" })
                             axios.put("https://hora-site.herokuapp.com/updatemoedas", { id: anuncioCandidatoFinal, moedas: (candidatoMoedas + anuncioBudget) })
                             axios.put("https://hora-site.herokuapp.com/updatemoedas", { id: anuncioUserId, moedas: (anuncioUserMoedas - anuncioBudget) })
