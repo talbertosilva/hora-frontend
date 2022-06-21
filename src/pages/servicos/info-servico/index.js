@@ -43,7 +43,7 @@ export const InfoServico = () => {
 
     useEffect(() => {
         console.log(params.anuncioID)
-        axios.get("https://hora-site.herokuapp.com/getanuncio/" + params.anuncioID)
+        axios.get("https://hora-site.herokuapp.com/api/getanuncio/" + params.anuncioID)
             .then(res => {
                 console.log(res.data)
                 setAnuncioInfo(res.data.pedido)
@@ -56,17 +56,17 @@ export const InfoServico = () => {
                 res.data.terminar.some(function (candidato) {
                     setTerminarExiste(candidato.utilizadorID == jwtDecode(localStorage.getItem("token")).id)
                 })
-                axios.get("https://hora-site.herokuapp.com/getmensagensanuncio/" + params.anuncioID + "/" + res.data.criadorID + "/" + res.data.candidatoFinalID)
+                axios.get("https://hora-site.herokuapp.com/api/getmensagensanuncio/" + params.anuncioID + "/" + res.data.criadorID + "/" + res.data.candidatoFinalID)
                     .then(res => {
                         setMensagens(res.data.mensagens)
                     })
-                axios.get("https://hora-site.herokuapp.com/finduser/" + res.data.criadorID)
+                axios.get("https://hora-site.herokuapp.com/api/finduser/" + res.data.criadorID)
                     .then(response => {
                         setAnuncioUserNome(response.data.nome + " " + response.data.apelido)
                         setAnuncioUserTrabalho(response.data.profissao)
                         setAnuncioUserMoedas(response.data.moedas)
                     })
-                axios.get("https://hora-site.herokuapp.com/finduser/" + res.data.candidatoFinalID)
+                axios.get("https://hora-site.herokuapp.com/api/finduser/" + res.data.candidatoFinalID)
                     .then(response => {
                         setCandidatoNome(response.data.nome + " " + response.data.apelido)
                         setCandidatoProfissao(response.data.profissao)
@@ -77,9 +77,9 @@ export const InfoServico = () => {
     }, [])
 
     const handleTerminar = () => {
-        axios.put('https://hora-site.herokuapp.com/terminaranuncio', { anuncioID: params.anuncioID, candidatoID: jwtDecode(localStorage.getItem("token")).id })
+        axios.put('https://hora-site.herokuapp.com/api/terminaranuncio', { anuncioID: params.anuncioID, candidatoID: jwtDecode(localStorage.getItem("token")).id })
             .then(() => {
-                axios.get("https://hora-site.herokuapp.com/getanuncio/" + params.anuncioID)
+                axios.get("https://hora-site.herokuapp.com/api/getanuncio/" + params.anuncioID)
                     .then(res => {
                         if (res.data.terminar.length === 2) {
                             axios.put("https://hora-site.herokuapp.com/estadoanuncio", { anuncioID: params.anuncioID, estado: "Terminado" })
@@ -98,7 +98,7 @@ export const InfoServico = () => {
     }
 
     const handleCancelarTerminar = () => {
-        axios.put('https://hora-site.herokuapp.com/cancelarterminaranuncio', { anuncioID: params.anuncioID, candidatoID: jwtDecode(localStorage.getItem("token")).id })
+        axios.put('https://hora-site.herokuapp.com/api/cancelarterminaranuncio', { anuncioID: params.anuncioID, candidatoID: jwtDecode(localStorage.getItem("token")).id })
             .then(() => {
                 setTerminarExiste(!terminarExiste)
                 dispatch(turnModalTopOn())
@@ -112,7 +112,7 @@ export const InfoServico = () => {
     const handleEnviar = () => {
         if (mensagemInput !== "") {
             if (anuncioUserId === jwtDecode(localStorage.getItem("token")).id) {
-                axios.post("https://hora-site.herokuapp.com/enviarmensagem",
+                axios.post("https://hora-site.herokuapp.com/api/enviarmensagem",
                     {
                         texto: mensagemInput,
                         enviadoPor: anuncioUserId,
@@ -124,13 +124,13 @@ export const InfoServico = () => {
                         anuncioID: params.anuncioID
                     }).then(() => {
                         setMensagemInput("")
-                        axios.get("https://hora-site.herokuapp.com/getmensagensanuncio/" + params.anuncioID + "/" + anuncioUserId + "/" + anuncioCandidatoFinal)
+                        axios.get("https://hora-site.herokuapp.com/api/getmensagensanuncio/" + params.anuncioID + "/" + anuncioUserId + "/" + anuncioCandidatoFinal)
                             .then(res => {
                                 setMensagens(res.data.mensagens)
                             })
                     })
             } else {
-                axios.post("https://hora-site.herokuapp.com/enviarmensagem",
+                axios.post("https://hora-site.herokuapp.com/api/enviarmensagem",
                     {
                         texto: mensagemInput,
                         enviadoPor: anuncioCandidatoFinal,
@@ -142,7 +142,7 @@ export const InfoServico = () => {
                         anuncioID: params.anuncioID,
                     }).then(res => {
                         setMensagemInput("")
-                        axios.get("https://hora-site.herokuapp.com/getmensagensanuncio/" + params.anuncioID + "/" + anuncioUserId + "/" + anuncioCandidatoFinal)
+                        axios.get("https://hora-site.herokuapp.com/api/getmensagensanuncio/" + params.anuncioID + "/" + anuncioUserId + "/" + anuncioCandidatoFinal)
                             .then(res => {
                                 setMensagens(res.data.mensagens)
                             })
