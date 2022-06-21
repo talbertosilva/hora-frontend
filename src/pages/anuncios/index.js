@@ -130,7 +130,6 @@ export const Anuncios = () => {
     useEffect(() => {
         if(!apagarModal) getAnuncios()
     }, [apagarModal])
-    
 
     return (
         <>
