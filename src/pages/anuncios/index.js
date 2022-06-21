@@ -127,17 +127,6 @@ export const Anuncios = () => {
         })
     }
 
-    useEffect(() => {
-        setCategoria("Todas as categorias")
-    }, [apagarModal])
-    
-
-    useEffect(() => {
-        if(categoria === "Todas as categorias"){
-            getAnuncios()
-        }
-    }, [anuncios])
-
     return (
         <>
             {modalTop ? <ModalTop Mensagem={modalMensagem} /> : null}
