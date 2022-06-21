@@ -42,8 +42,10 @@ export const InfoServico = () => {
     moment.locale('pt')
 
     useEffect(() => {
+        console.log(params.anuncioID)
         axios.get("https://hora-site.herokuapp.com/getanuncio/" + params.anuncioID)
             .then(res => {
+                console.log(res.data)
                 setAnuncioInfo(res.data.pedido)
                 setAnuncioPrazo(res.data.duracao)
                 setAnuncioBudget(res.data.budget)
