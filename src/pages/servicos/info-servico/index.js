@@ -85,6 +85,7 @@ export const InfoServico = () => {
                     axios.put("https://hora-site.herokuapp.com/api/estadoanuncio", { anuncioID: params.anuncioID, estado: "Terminado" })
                     axios.put("https://hora-site.herokuapp.com/api/updatemoedas", { id: anuncioCandidatoFinal, moedas: (candidatoMoedas + anuncioBudget) })
                     axios.put("https://hora-site.herokuapp.com/api/updatemoedas", { id: anuncioUserId, moedas: (anuncioUserMoedas - anuncioBudget) })
+                    window.location.reload(false)
                 } else {
                     setTerminarExiste(!terminarExiste)
                     dispatch(turnModalTopOn())
