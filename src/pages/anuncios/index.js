@@ -129,7 +129,7 @@ export const Anuncios = () => {
 
     useEffect(() => {
         getAnuncios()
-    }, [apagarModal, anuncios])
+    }, [apagarModal])
     
 
     return (
