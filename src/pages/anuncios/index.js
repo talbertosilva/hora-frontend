@@ -128,10 +128,14 @@ export const Anuncios = () => {
     }
 
     useEffect(() => {
-        if(categoria === "Todos os serviços") {
-            getAnuncios()
-        }
-    }, [apagarModal, anuncios])
+        setCategoria("Todos os serviços")
+    }, [apagarModal])
+    
+    useEffect(() => {
+      if(categoria === "Todos os serviços"){
+        getAnuncios()
+      }
+    }, [categoria])
     
 
     return (
