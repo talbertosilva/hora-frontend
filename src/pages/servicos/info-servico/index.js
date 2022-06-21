@@ -80,7 +80,9 @@ export const InfoServico = () => {
 
     const handleTerminar = () => {
         axios.put('https://hora-site.herokuapp.com/api/terminaranuncio', { anuncioID: params.anuncioID, candidatoID: jwtDecode(localStorage.getItem("token")).id })
-            .then(() => {
+            .then(res => {
+                console.log(terminarCount)
+                console.log(res.data.terminar.length)
                 if (terminarCount === 1) {
                     axios.put("https://hora-site.herokuapp.com/estadoanuncio", { anuncioID: params.anuncioID, estado: "Terminado" })
                     axios.put("https://hora-site.herokuapp.com/updatemoedas", { id: anuncioCandidatoFinal, moedas: (candidatoMoedas + anuncioBudget) })
