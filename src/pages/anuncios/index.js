@@ -128,17 +128,15 @@ export const Anuncios = () => {
     }
 
     useEffect(() => {
-        if(!apagarModal) {
-            getAnuncios()
-        }
+        setCategoria("Todas as categorias")
     }, [apagarModal])
     
 
-    // useEffect(() => {
-    //     if(categoria === "Todas as categorias"){
-            
-    //     }
-    // }, [anuncios, categoria])
+    useEffect(() => {
+        if(categoria === "Todas as categorias"){
+            getAnuncios()
+        }
+    }, [anuncios])
 
     return (
         <>
