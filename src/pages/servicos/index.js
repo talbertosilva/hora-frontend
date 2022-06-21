@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { NavbarLogged } from '../../components/navbar-logged'
 import axios from 'axios'
-import { useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import moment from 'moment'
 
 import './servicos.css'
@@ -209,7 +209,7 @@ export const Servicos = () => {
                                 </div>
                                 <p className='categoria'>{anuncio.categoria}</p>
                                 <div className='btn'>
-                                    <button onClick={() => navigate("/info-servico/" + anuncio._id)} className='enviar-btn'>Detalhes</button>
+                                    <Link to={"/info-servico/" + anuncio._id}><button className='enviar-btn'>Detalhes</button></Link>
                                     {anuncio.estado === "Terminado" ? <button onClick={() => handleReview(anuncio._id)} className='review-btn'>Deixar uma review</button> : null}
                                 </div>
                             </div>
