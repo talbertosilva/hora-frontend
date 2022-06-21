@@ -24,6 +24,7 @@ export const InfoServico = () => {
     const [anuncioCandidatoFinal, setAnuncioCandidatoFinal] = useState()
     const [anuncioCandidatoFinalFoto, setAnuncioCandidatoFinalFoto] = useState()
     const [terminarExiste, setTerminarExiste] = useState()
+    const [terminarCount, setTerminarCount] = useState()
 
     const [mensagemInput, setMensagemInput] = useState("")
 
@@ -53,6 +54,7 @@ export const InfoServico = () => {
                 setAnuncioUserId(res.data.criadorID)
                 setAnuncioCandidatoFinal(res.data.candidatoFinalID)
                 setAnuncioUserFoto(res.data.criadorFoto)
+                setTerminarCount(res.data.terminar.length)
                 res.data.terminar.some(function (candidato) {
                     setTerminarExiste(candidato.utilizadorID == jwtDecode(localStorage.getItem("token")).id)
                 })
@@ -79,21 +81,19 @@ export const InfoServico = () => {
     const handleTerminar = () => {
         axios.put('https://hora-site.herokuapp.com/api/terminaranuncio', { anuncioID: params.anuncioID, candidatoID: jwtDecode(localStorage.getItem("token")).id })
             .then(() => {
-                axios.get("https://hora-site.herokuapp.com/api/getanuncio/" + params.anuncioID)
-                    .then(res => {
-                        if (res.data.terminar.length > 1) {
-                            axios.put("https://hora-site.herokuapp.com/estadoanuncio", { anuncioID: params.anuncioID, estado: "Terminado" })
-                            axios.put("https://hora-site.herokuapp.com/updatemoedas", { id: anuncioCandidatoFinal, moedas: (candidatoMoedas + anuncioBudget) })
-                            axios.put("https://hora-site.herokuapp.com/updatemoedas", { id: anuncioUserId, moedas: (anuncioUserMoedas - anuncioBudget) })
-                        }
-                    })
-                setTerminarExiste(!terminarExiste)
-                dispatch(turnModalTopOn())
-                dispatch(modalTopMensagem("Aguarde o outro utilizador terminar o serviço."))
-                setTimeout(function () {
-                    dispatch(turnModalTopOff())
-                }, 2000)
-                window.location.reload(false)
+                if (terminarCount === 2) {
+                    axios.put("https://hora-site.herokuapp.com/estadoanuncio", { anuncioID: params.anuncioID, estado: "Terminado" })
+                    axios.put("https://hora-site.herokuapp.com/updatemoedas", { id: anuncioCandidatoFinal, moedas: (candidatoMoedas + anuncioBudget) })
+                    axios.put("https://hora-site.herokuapp.com/updatemoedas", { id: anuncioUserId, moedas: (anuncioUserMoedas - anuncioBudget) })
+                } else {
+                    setTerminarExiste(!terminarExiste)
+                    dispatch(turnModalTopOn())
+                    dispatch(modalTopMensagem("Aguarde o outro utilizador terminar o serviço."))
+                    setTimeout(function () {
+                        dispatch(turnModalTopOff())
+                    }, 2000)
+                    window.location.reload(false)
+                }
             })
     }
 
